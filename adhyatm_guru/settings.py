@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'home_page',
     'accounts',
     'prakalp',
+    'site_settings',
 ]
 
 MIDDLEWARE = [
