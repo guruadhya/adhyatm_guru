@@ -19,4 +19,4 @@ def prakalp_details(request, prakalp_id):
         'prakalp': prakalp,
         'images': prakalp_images,
     }
-    return render(request, 'prakalp_details.html')
+    return render(request, 'prakalp_details.html', context)
