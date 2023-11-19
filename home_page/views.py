@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-from adhyatm_guru.prakalp.models import Prakalp
+from prakalp.models import Prakalp
 
 
 def home_page(request):
