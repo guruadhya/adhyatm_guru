@@ -1,19 +1,52 @@
 {% extends 'base.html' %}
 {% block content %}
+<style>
+    .prakalp-details {
+        background-color: #f8f9fa; /* Light background color */
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .prakalp-title {
+        font-size: 24px;
+        font-weight: bold;
+        color: #007bff; /* Accent color */
+        margin-bottom: 15px;
+    }
+
+    .gallery-image {
+        margin-bottom: 15px;
+        border-radius: 10px; /* Rounded border for images */
+        overflow: hidden; /* Ensures the border-radius is applied correctly */
+    }
+
+    .gallery-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px; /* Ensure images inside the rounded container are also rounded */
+    }
+
+    .prakalp-description {
+        text-align: justify;
+        line-height: 1.6;
+    }
+</style>
+
 <div class="container">
     <div class="row">
-        <div class="col-lg-8">
-            <p>{{prakalp.title}}</p>
-            <div class="col-lg-8">
+        <div class="col-lg-8 mx-auto">
+            <div class="prakalp-details">
+                <p class="prakalp-title">{{prakalp.title}}</p>
                 <div class="row">
                     {% for i in images %}
-                    <div class="col-lg-3">
+                    <div class="col-lg-3 gallery-image">
                         <img src="{{i.image.url}}" alt="" class="img-fluid">
                     </div>
                     {% endfor %}
                 </div>
+                <p class="prakalp-description">{{prakalp.description}}</p>
             </div>
-            <p>{{prakalp.description}}</p>
         </div>
     </div>
 </div>
