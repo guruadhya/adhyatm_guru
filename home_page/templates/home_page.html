@@ -1,12 +1,58 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container">
+<style>
+    .prakalp-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .prakalp-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .prakalp-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px 8px 0 0;
+    }
+
+    .prakalp-details {
+        padding: 16px;
+    }
+
+    .prakalp-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+
+    .read-more-link {
+        display: inline-block;
+        color: #007bff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .read-more-link:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<div class="container mt-3">
     <div class="row">
         {% for prakalp in prakalp %}
-        <div class="col-lg-3 text-center">
-            <img src="{{prakalp.main_image.url}}" alt="" class="img-fluid">
-            <p>{{prakalp.title}}</p>
-            <a href="/prakalp/prakalp_details/{{prakalp.id}}/">Read more</a>
+        <div class="col-lg-3 mb-4">
+            <div class="prakalp-item">
+                <img src="{{prakalp.main_image.url}}" alt="{{prakalp.title}}" class="img-fluid">
+                <div class="prakalp-details">
+                    <p class="prakalp-title">{{prakalp.title}}</p>
+                    <a href="/prakalp/prakalp_details/{{prakalp.id}}/" class="read-more-link">Read more</a>
+                </div>
+            </div>
         </div>
         {% endfor %}
     </div>
