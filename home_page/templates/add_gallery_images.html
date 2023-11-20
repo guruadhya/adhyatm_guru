@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block css %}
+
+{% endblock css %}
+
+{% block content %}
+<div class="container">
+    <div class="col-lg-6 add-image-form">
+        <h2>Add Image</h2>
+        <form method="post" enctype="multipart/form-data" id="imageForm">{% csrf_token %}
+            <label for="image">Image URL:</label>
+            <input type="file" id="image" name="image" class="form-control" required multiple>
+            <input type="submit" class="form-control mt-4 btn btn-primary" onclick="addImage()" value="Add Image">
+        </form>
+    </div>
+</div>
+{% endblock content %}
+
+{% block js %}
+{% endblock js %}
