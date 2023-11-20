@@ -3,12 +3,16 @@ from django.shortcuts import render, redirect
 # Create your views here.
 from prakalp.models import Prakalp, PrakalpImage
 
-from .models import AboutTrust, AboutMaharaj, Gallery
+from .models import AboutTrust, AboutMaharaj, Gallery, LookupField
 
 
 def home_page(request):
+    header_banner_homepage = LookupField.objects.filter(title='header_banner_homepage')
+    if header_banner_homepage:
+        header_banner_homepage = header_banner_homepage[0].image.url
     prakalp = Prakalp.objects.all()
     context = {
+        'header_banner_homepage': header_banner_homepage,
         'prakalp': prakalp
     }
     return render(request, 'home_page.html', context)
