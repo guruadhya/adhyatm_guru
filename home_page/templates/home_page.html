@@ -68,14 +68,14 @@
 {% block header %}
 <div class="header-banner">
     <div class="container">
-        <div class="banner-text">Welcome to Our Website</div>
-        <div class="banner-subtext">Discover amazing content and more...</div>
+        <div class="banner-text">{{site_info.site_name}}</div>
+        <div class="banner-subtext">{{site_info.site_description}}</div>
     </div>
 </div>
 {% endblock header %}
 
 {% block content %}
-<div class="container mt-3">
+<div class="container mt-3 mb-3">
     <div class="row">
         {% for prakalp in prakalp %}
         <div class="col-lg-3 mb-4">

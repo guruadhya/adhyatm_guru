@@ -4,14 +4,17 @@ from django.shortcuts import render, redirect
 from prakalp.models import Prakalp, PrakalpImage
 
 from .models import AboutTrust, AboutMaharaj, Gallery, LookupField
+from site_settings.models import SiteSettings
 
 
 def home_page(request):
+    site_info = SiteSettings.objects.all()
     header_banner_homepage = LookupField.objects.filter(title='header_banner_homepage')
     if header_banner_homepage:
         header_banner_homepage = header_banner_homepage[0].image.url
     prakalp = Prakalp.objects.all()
     context = {
+        'site_info': site_info[0],
         'header_banner_homepage': header_banner_homepage,
         'prakalp': prakalp
     }
