@@ -12,3 +12,12 @@ class SiteSettings(models.Model):
 
     class Meta:
         db_table = 'site_settings'
+
+
+class ContactDetails(models.Model):
+    address = models.TextField()
+    mobile = models.CharField(max_length=15)
+    email = models.EmailField()
+
+    def __str__(self):
+        return self.address
