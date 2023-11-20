@@ -41,3 +41,13 @@ class Gallery(models.Model):
 
     class Meta:
         db_table = 'gallery_images'
+
+
+class LookupField(models.Model):
+    title = models.CharField(max_length=256, null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
+    image = models.ImageField(upload_to='lookup_images', null=True, blank=True)
+    file = models.FileField(upload_to='lookup_files', null=True, blank=True)
+
+    class Meta:
+        db_table = 'lookup_field'

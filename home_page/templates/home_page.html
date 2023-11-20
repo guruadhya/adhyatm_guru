@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block content %}
+{% block css %}
 <style>
     .prakalp-item {
         position: relative;
@@ -41,7 +41,40 @@
         text-decoration: underline;
     }
 </style>
+<style>
+    /* Add these styles to your existing CSS or in a separate file */
 
+    .header-banner {
+        background-image: url('{{}}'); /* Replace with the path to your banner image */
+        background-size: cover;
+        background-position: center;
+        color: black;
+        text-align: center;
+        padding: 10px 0; /* Adjust the padding to control the banner height */
+    }
+
+    .banner-text {
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .banner-subtext {
+        font-size: 18px;
+    }
+</style>
+{% endblock css %}
+
+{% block header %}
+<div class="header-banner">
+    <div class="container">
+        <div class="banner-text">Welcome to Our Website</div>
+        <div class="banner-subtext">Discover amazing content and more...</div>
+    </div>
+</div>
+{% endblock header %}
+
+{% block content %}
 <div class="container mt-3">
     <div class="row">
         {% for prakalp in prakalp %}
