@@ -34,3 +34,10 @@ class SocialMediaIcons(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Gallery(models.Model):
+    image = models.ImageField(upload_to='gallery_images')
+
+    class Meta:
+        db_table = 'gallery_images'
