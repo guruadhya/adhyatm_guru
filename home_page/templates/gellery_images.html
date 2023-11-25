@@ -19,19 +19,19 @@
         .gallery img:hover {
             transform: scale(1.1);
         }
+
 </style>
 {% endblock css %}
 {% block content %}
 <div class="container mt-3 mb-3">
-    <div class="row">
-        <div class="gallery">
+    <div class="gallery">
+        <div class="row">
             {% for gallery in gallery %}
             <div class="col-lg-3">
                 <img src="{{gallery.image.url}}" alt="Image 1" class="img-fluid">
             </div>
             {% endfor %}
         </div>
-
     </div>
 </div>
 {% endblock content %}
@@ -47,5 +47,6 @@
         event.preventDefault();
         $(this).ekkoLightbox();
     });
+
 </script>
 {% endblock js %}
