@@ -12,9 +12,15 @@ def home_page(request):
     header_banner_homepage = LookupField.objects.filter(title='header_banner_homepage')
     if header_banner_homepage:
         header_banner_homepage = header_banner_homepage[0].image.url
+
+    header_middle_banner = LookupField.objects.filter(title='header_middle_banner')
+    if header_middle_banner:
+        header_middle_banner = header_middle_banner[0].image.url
+
     prakalp = Prakalp.objects.all()
     context = {
         'site_info': site_info[0],
+         'header_middle_banner': header_middle_banner,
         'header_banner_homepage': header_banner_homepage,
         'prakalp': prakalp
     }
