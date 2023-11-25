@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block css %}
+
+{% endblock css %}
+
+{% block header %}
+<div class="header-banner">
+    <div class="container">
+        <div class="banner-text">{{site_info.site_name}}</div>
+        <div class="banner-subtext">{{site_info.site_description}}</div>
+    </div>
+</div>
+{% endblock header %}
+
+{% block content %}
+<div class="container mt-3 mb-3">
+    <div class="row">
+        {% for vichar in vichar %}
+        <div class="col-lg-3 mb-4 border">
+            <img src="{{vichar.image.url}}" class="img-fluid">
+        </div>
+    </div>
+    {% endfor %}
+</div>
+</div>
+{% endblock content %}

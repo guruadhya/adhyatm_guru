@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'accounts',
     'prakalp',
     'site_settings',
+    'vichar',
 ]
 
 MIDDLEWARE = [
