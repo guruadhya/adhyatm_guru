@@ -24,10 +24,10 @@
 {% endblock css %}
 {% block content %}
 <div class="container mt-3 mb-3">
-    <div class="gallery">
-        <div class="row">
+    <div class="gallery col-lg-8 mx-auto">
+        <div class="row text-center">
             {% for gallery in gallery %}
-            <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-2 mx-auto">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3 p-3">
                 <img src="{{gallery.image.url}}" alt="Image 1" class="img-fluid">
             </div>
             {% endfor %}
@@ -35,6 +35,7 @@
     </div>
 </div>
 {% endblock content %}
+
 
 {% block js %}
 <!-- Bootstrap JS -->
