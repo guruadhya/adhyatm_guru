@@ -13,18 +13,26 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
     <title>Adhyatma guru</title>
+    <style>
+        .nav-item{
+            padding:0px 30px;
+        }
+
+    </style>
     {% block css %}
     {% endblock css %}
 </head>
 <body>
-{% block header %}
-<div class="header-top">
-
-</div>
-{% endblock header %}
+<header>
+    <img src="{{header_banner_homepage}}" alt="" class="img-fluid">
+</header>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow mb-3">
     <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <img src="{{site_info.site_logo.url}}" alt="" height="50">
+            <span class="ms-2"><b>{{site_info.site_name}}</b></span>
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -38,7 +46,7 @@
                     <a class="nav-link" href="/about_maharaj/">महाराज जी</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/">प्रकल्प</a>
+                    <a class="nav-link" href="/prakalp/">प्रकल्प</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/gallery_images/">मीडिया गैलरी</a>
@@ -58,12 +66,12 @@
     </div>
 </nav>
 
-{% block header_middle_banner %}
-{% endblock header_middle_banner %}
+{% block carousel %}
+
+{% endblock carousel %}
 
 {% block content %}
 {% endblock content %}
-
 <!-- Optional JavaScript; choose one of the two! -->
 
 <!-- Option 1: Bootstrap Bundle with Popper -->

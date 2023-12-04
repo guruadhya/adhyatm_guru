@@ -1,7 +1,7 @@
-{% extends 'base.html' %}
+{% extends 'new_base.html' %}
 {% block css %}
 <style>
-    .prakalp-item {
+        .prakalp-item {
         position: relative;
         overflow: hidden;
         border-radius: 8px;
@@ -41,32 +41,43 @@
         text-decoration: underline;
     }
 
-    .header-banner{
-      background-image: url('{{header_banner_homepage}}');
-      background-repeat: no-repeat;
-      background-position: center center;
-    }
 
 </style>
 {% endblock css %}
 
-{% block header %}
-<div class="header-banner text-center bg-warning">
-    <div class="container p-3">
-        <div class="banner-text">
-            <img src="{{site_info.site_logo.url}}" alt="" height="50">
-        </div>
-        <div class="banner-text">{{site_info.site_name}}</div>
-        <div class="banner-subtext"><em><b>{{site_info.site_description}}</b></em></div>
+{% block carousel %}
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
     </div>
-</div>
-{% endblock header %}
+    <div class="carousel-inner">
+        {% if carousel %}
+            {% for i in carousel %}
+            <div class="carousel-item {% if forloop.counter == 1 %} active {% endif %}">
+                <img src="{{i.image.url}}" class="d-block w-100">
+            </div>
+            {% endfor %}
+        {% endif %}
 
-{% block header_middle_banner %}
-<div class="text-center">
-    <img src="{{header_middle_banner}}" alt="" class="img-fluid">
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
 </div>
-{% endblock header_middle_banner %}
+{% endblock carousel %}
+
 
 {% block content %}
 <div class="container mt-3 mb-3">
