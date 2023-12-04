@@ -21,3 +21,11 @@ class ContactDetails(models.Model):
 
     def __str__(self):
         return self.address
+
+
+class DanDetails(models.Model):
+    scaner = models.ImageField(upload_to='daan_scaner')
+    details = models.TextField(null=True, blank=True)
+
+    class Meta:
+        db_table = 'daan_details'

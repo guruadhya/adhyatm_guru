@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 from prakalp.models import Prakalp, PrakalpImage
 
 from .models import AboutTrust, AboutMaharaj, Gallery, LookupField
-from site_settings.models import SiteSettings
+from site_settings.models import SiteSettings, DanDetails
 
 from carousel.models import Carousel, CarouselImages
 
@@ -15,10 +15,6 @@ def home_page(request):
     if header_banner_homepage:
         header_banner_homepage = header_banner_homepage[0].image.url
 
-    header_middle_banner = LookupField.objects.filter(title='header_middle_banner')
-    if header_middle_banner:
-        header_middle_banner = header_middle_banner[0].image.url
-
     carousel_id = Carousel.objects.filter(title='homepage_carousel')
     if carousel_id:
         carousel = CarouselImages.objects.filter(carousel_id=carousel_id[0].id)
@@ -28,7 +24,6 @@ def home_page(request):
     prakalp = Prakalp.objects.all()
     context = {
         'site_info': site_info[0],
-        'header_middle_banner': header_middle_banner,
         'header_banner_homepage': header_banner_homepage,
         'carousel': carousel,
         'prakalp': prakalp,
@@ -88,3 +83,29 @@ def gallery_images(request):
         'gallery': gallery
     }
     return render(request, 'gellery_images.html', context)
+
+
+def daan(request):
+    site_info = SiteSettings.objects.all()
+    header_banner_homepage = LookupField.objects.filter(title='header_banner_homepage')
+    if header_banner_homepage:
+        header_banner_homepage = header_banner_homepage[0].image.url
+
+    carousel_id = Carousel.objects.filter(title='homepage_carousel')
+    if carousel_id:
+        carousel = CarouselImages.objects.filter(carousel_id=carousel_id[0].id)
+    else:
+        carousel = ''
+
+    dan = DanDetails.objects.first()
+    if dan:
+        dan = dan
+    else:
+        dan = ''
+    context = {
+        'site_info': site_info[0],
+        'header_banner_homepage': header_banner_homepage,
+        'carousel': carousel,
+        'dan': dan,
+    }
+    return render(request, 'daan.html', context)
