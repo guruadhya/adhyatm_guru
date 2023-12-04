@@ -20,7 +20,10 @@ def home_page(request):
         header_middle_banner = header_middle_banner[0].image.url
 
     carousel_id = Carousel.objects.filter(title='homepage_carousel')
-    carousel = CarouselImages.objects.filter(carousel_id=carousel_id[0].id)
+    if carousel_id:
+        carousel = CarouselImages.objects.filter(carousel_id=carousel_id[0].id)
+    else:
+        carousel = ''
 
     prakalp = Prakalp.objects.all()
     context = {
