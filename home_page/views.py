@@ -22,11 +22,20 @@ def home_page(request):
         carousel = ''
 
     prakalp = Prakalp.objects.all()
+
+    dan = DanDetails.objects.first()
+    if dan:
+        dan = dan
+    else:
+        dan = ''
+
+
     context = {
         'site_info': site_info[0],
         'header_banner_homepage': header_banner_homepage,
         'carousel': carousel,
         'prakalp': prakalp,
+        'dan': dan,
     }
     # return render(request, 'home_page.html', context)
     return render(request, 'new_homepage.html', context)
