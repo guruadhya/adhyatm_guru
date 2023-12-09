@@ -44,7 +44,32 @@
 
 
 
+    .blue-color {
+          color:blue;
+        }
 
+        .green-color {
+            color:green;
+        }
+
+        .fa.fa-instagram {
+          color: transparent;
+          background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+          background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+          background-clip: text;
+          -webkit-background-clip: text;
+        }
+        .banner_img{
+            width:98.9vw;
+        }
+
+        .line-height {
+          line-height: 1.8;
+        }
+
+        .bg_color{
+            background-color:#7a2323;
+        }
 </style>
 {% endblock css %}
 
@@ -100,23 +125,59 @@
     </div>
 </div>
 
-
-<footer class="bg-dark text-light text-center py-3">
-    <h4 class="text-center">Scan and Donate Now</h4>
-    <div class="container">
-        <div class="col-lg-8 mx-auto">
-            <div class="row">
-                <div class="col-lg-6 mx-auto">
-                    <img src="{{dan.scaner.url}}" class="img-fluid mb-3">
-                </div>
-                <div class="col-lg-8 mx-auto pt-5">
-                    <pre style="font-size:20px">{{dan.details}}</pre>
-                </div>
-            </div>
-        </div>
+<!-- ---------------------------------------------------------- -->
+<p class="text-center">Follow us</p>
+<div class="d-flex col-lg-2 mx-auto mt-2">
+    <div class="m-1 mx-auto">
+        <a class="facebook-button m-2" href="https://www.facebook.com/people/Swami-Krishnanand-Mahamandaleshwar/100071491568962/?mibextid=JRoKGi" target="_blank">
+            <i class="blue-color fa fa-facebook-f facebook" style="font-size:24px"></i><br/><br/>
+        </a>
     </div>
+
+    <div class="m-1 mx-auto">
+        <a class="facebook-button m-2" href="https://instagram.com/mahamandaleshwarswami?igshid=YTQwZjQ0NmI0OA=="
+           target="_blank">
+            <i class="fa fa-instagram" style="font-size:24px"></i><br/><br/>
+        </a>
     </div>
-</footer>
 
+    <div class="m-1 mx-auto">
+        <a class="facebook-button m-2" href="https://youtube.com/@mahamandaleshwarswamikrish44?si=GcGsThv4S3GzVeM4" target="_blank">
+            <i class="fa fa-youtube-play" style="font-size:24px;color:red"></i></br><br/>
+        </a>
+    </div>
 
+    <div class="m-1 mx-auto">
+        <a class="facebook-button m-2" href="https://x.com/bhagwat_yog?t=x092yF7YulumHBRZO6EQvw&s=08"
+           target="_blank">
+            <i class="blue-color fa-brands fa-x-twitter" style="font-size:24px"></i><br/><br/>
+        </a>
+    </div>
+</div>
 {% endblock content %}
+
+{% block donet %}
+<div class="col-lg-8 text-center mx-auto" id="donate">
+    <p class="mt-4">सहयोग राशी /Donate Now</p>
+    <h3>SCAN AND PAY</h3>
+    <div class="row mx-auto">
+        <div class="col-lg-4 mt-4 mx-auto">
+            <pre style="font-size:20px">{{dan.details}}</pre>
+<!--            Name: DHARM RAKSHA SANGH-->
+<!--            <br>-->
+<!--            Current A/c No: 101705500235-->
+<!--            <br>-->
+<!--            Bank Name: ICICI Bank-->
+<!--            <br>-->
+<!--            IFC Code : ICIC0001017-->
+<!--            <br>-->
+<!--            Branch Vrindavan-->
+        </div>
+
+        <div class="col-lg-4 mx-auto">
+            <img alt="" height="200" src="{{dan.scaner.url}}">
+        </div>
+
+    </div>
+</div>
+{% endblock %}
