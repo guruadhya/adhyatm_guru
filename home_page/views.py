@@ -15,6 +15,10 @@ def home_page(request):
     if header_banner_homepage:
         header_banner_homepage = header_banner_homepage[0].image.url
 
+    header_middle_banner = LookupField.objects.filter(title='header_middle_banner')
+    if header_middle_banner:
+        header_middle_banner = header_middle_banner[0].image.url
+
     carousel_id = Carousel.objects.filter(title='homepage_carousel')
     if carousel_id:
         carousel = CarouselImages.objects.filter(carousel_id=carousel_id[0].id)
@@ -33,6 +37,7 @@ def home_page(request):
     context = {
         'site_info': site_info[0],
         'header_banner_homepage': header_banner_homepage,
+        'header_middle_banner': header_middle_banner,
         'carousel': carousel,
         'prakalp': prakalp,
         'dan': dan,
