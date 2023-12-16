@@ -101,9 +101,9 @@ def gallery_images(request):
 
 def daan(request):
     site_info = SiteSettings.objects.all()
-    header_banner_homepage = LookupField.objects.filter(title='header_banner_homepage')
-    if header_banner_homepage:
-        header_banner_homepage = header_banner_homepage[0].image.url
+    header_daan_banner = LookupField.objects.filter(title='header_daan_banner')
+    if header_daan_banner:
+        header_daan_banner = header_daan_banner[0].image.url
 
     carousel_id = Carousel.objects.filter(title='homepage_carousel')
     if carousel_id:
@@ -118,7 +118,7 @@ def daan(request):
         dan = ''
     context = {
         'site_info': site_info[0],
-        'header_banner_homepage': header_banner_homepage,
+        'header_daan_banner': header_daan_banner,
         'carousel': carousel,
         'dan': dan,
     }

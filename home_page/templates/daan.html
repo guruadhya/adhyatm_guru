@@ -34,48 +34,62 @@
 {% endblock css %}
 
 {% block carousel %}
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-        {% if carousel %}
-        {% for i in carousel %}
-        <div class="carousel-item {% if forloop.counter == 1 %} active {% endif %}">
-            <img src="{{i.image.url}}" class="d-block w-100">
-        </div>
-        {% endfor %}
-        {% endif %}
+<img src="{{header_daan_banner}}" class="d-block w-100">
+<!--<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">-->
+<!--    <div class="carousel-indicators">-->
+<!--        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"-->
+<!--                aria-current="true" aria-label="Slide 1"></button>-->
+<!--        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"-->
+<!--                aria-label="Slide 2"></button>-->
+<!--        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"-->
+<!--                aria-label="Slide 3"></button>-->
+<!--    </div>-->
+<!--    <div class="carousel-inner">-->
+<!--        {% if carousel %}-->
+<!--        {% for i in carousel %}-->
+<!--        <div class="carousel-item {% if forloop.counter == 1 %} active {% endif %}">-->
+<!--            <img src="{{i.image.url}}" class="d-block w-100">-->
+<!--        </div>-->
+<!--        {% endfor %}-->
+<!--        {% endif %}-->
 
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-</div>
+<!--    </div>-->
+<!--    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"-->
+<!--            data-bs-slide="prev">-->
+<!--        <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+<!--        <span class="visually-hidden">Previous</span>-->
+<!--    </button>-->
+<!--    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"-->
+<!--            data-bs-slide="next">-->
+<!--        <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+<!--        <span class="visually-hidden">Next</span>-->
+<!--    </button>-->
+<!--</div>-->
 {% endblock carousel %}
 
 
-{% block content %}
-<div class="container">
-    <div class="user-profile">
-        <div class="user-image">
-            <img src="{{dan.scaner.url}}" alt="User Image">
+{% block donet %}
+<div class="col-lg-8 text-center mx-auto mb-3" id="donate">
+    <p class="mt-4">सहयोग राशी /Donate Now</p>
+    <h3>SCAN AND PAY</h3>
+    <div class="row mx-auto">
+        <div class="col-lg-4 mt-4 mx-auto">
+<!--            <pre style="font-size:20px">{{dan.details}}</pre>-->
+            Name: RAJEEV KUMAR PANDEY
+            <br>
+            Current A/c No: 685310110001242
+            <br>
+            Bank Name: Bank of India
+            <br>
+            IFC Code : BKID0006853
+            <br>
+            Vrindavan Branch Chhatikara Road
         </div>
-        <center>
-            <pre>{{dan.details}}</pre>
-        </center>
+
+        <div class="col-lg-4 mx-auto">
+            <img alt="" height="200" src="{{dan.scaner.url}}">
+        </div>
+
     </div>
 </div>
-{% endblock content %}
+{% endblock %}
