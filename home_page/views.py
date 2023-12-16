@@ -120,6 +120,7 @@ def daan(request):
         'site_info': site_info[0],
         'header_daan_banner': header_daan_banner,
         'carousel': carousel,
+
         'dan': dan,
     }
     return render(request, 'daan.html', context)
