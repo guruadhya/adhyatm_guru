@@ -19,9 +19,17 @@
         .nav-item{
             padding:0px 30px;
         }
+        .logo-img {
+            width: 220px; /* Default width for mobile */
+            height: auto; /* Maintain aspect ratio */
+        }
 
-
-
+        /* Media query for desktop screens */
+        @media (min-width: 768px) {
+            .logo-img {
+                width: 500px; /* Set width to 500 pixels on desktop */
+            }
+        }
     </style>
     {% block css %}
     {% endblock css %}
@@ -34,8 +42,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow mb-3">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">
-
-            <img src="{{site_info.site_logo.url}}" alt="" class="img-fluid">
+            <img src="{{site_info.site_logo.url}}" alt="" width="200" class="logo-img">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
