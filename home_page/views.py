@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 # Create your views here.
 from prakalp.models import Prakalp, PrakalpImage
 # from googleapiclient.discovery import build
-from .models import AboutTrust, AboutMaharaj, Gallery, LookupField
+from .models import AboutTrust, AboutMaharaj, Gallery, LookupField, LiveTv
 from site_settings.models import SiteSettings, DanDetails
 
 from carousel.models import Carousel, CarouselImages
@@ -11,6 +11,11 @@ from carousel.models import Carousel, CarouselImages
 
 def home_page(request):
     site_info = SiteSettings.objects.all()
+    tv = LiveTv.objects.filter(title='LIVE_TV')
+    if tv:
+        tv = tv[0].description
+    else:
+        tv = ''
     header_banner_homepage = LookupField.objects.filter(title='header_banner_homepage')
     if header_banner_homepage:
         header_banner_homepage = header_banner_homepage[0].image.url
@@ -53,7 +58,6 @@ def home_page(request):
     # ).execute()
     #
     # videos = response.get('items', [])
-
     context = {
         'site_info': site_info[0],
         'header_banner_homepage': header_banner_homepage,
@@ -62,6 +66,7 @@ def home_page(request):
         'prakalp': prakalp,
         'dan': dan,
         'dan1': dan1,
+        'tv': tv,
         # 'videos': videos,
     }
     # return render(request, 'home_page.html', context)
