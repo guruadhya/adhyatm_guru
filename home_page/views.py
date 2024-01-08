@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 
 # Create your views here.
 from prakalp.models import Prakalp, PrakalpImage
-
+# from googleapiclient.discovery import build
 from .models import AboutTrust, AboutMaharaj, Gallery, LookupField
 from site_settings.models import SiteSettings, DanDetails
 
@@ -28,11 +28,31 @@ def home_page(request):
     prakalp = Prakalp.objects.all()
 
     dan = DanDetails.objects.first()
+    dan1 = DanDetails.objects.last()
     if dan:
         dan = dan
     else:
         dan = ''
 
+    if dan1:
+        dan1 = dan1
+    else:
+        dan1 = ''
+
+    # api_key = 'AIzaSyCJQ2WoCt9gMmdKlkaRS_NqEyNeNyxDm9k'
+    # youtube = build('youtube', 'v3', developerKey=api_key)
+    #
+    # # Get the latest videos from a specific channel (replace 'CHANNEL_ID' with your channel ID)
+    # channel_id = 'UCH-cK1RIBzsbVlNnWDD0nHw'
+    # response = youtube.search().list(
+    #     part='snippet',
+    #     channelId=channel_id,
+    #     order='date',
+    #     type='video',
+    #     maxResults=9  # You can adjust the number of videos to retrieve
+    # ).execute()
+    #
+    # videos = response.get('items', [])
 
     context = {
         'site_info': site_info[0],
@@ -41,6 +61,8 @@ def home_page(request):
         'carousel': carousel,
         'prakalp': prakalp,
         'dan': dan,
+        'dan1': dan1,
+        # 'videos': videos,
     }
     # return render(request, 'home_page.html', context)
     return render(request, 'new_homepage.html', context)

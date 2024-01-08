@@ -67,41 +67,12 @@
         .bg_color{
             background-color:#7a2323;
         }
+
 </style>
 {% endblock css %}
 
 {% block carousel %}
 <img src="{{header_middle_banner}}" class="d-block w-100">
-<!--<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">-->
-<!--    <div class="carousel-indicators">-->
-<!--        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"-->
-<!--                aria-current="true" aria-label="Slide 1"></button>-->
-<!--        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"-->
-<!--                aria-label="Slide 2"></button>-->
-<!--        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"-->
-<!--                aria-label="Slide 3"></button>-->
-<!--    </div>-->
-<!--    <div class="carousel-inner">-->
-<!--        {% if carousel %}-->
-<!--        {% for i in carousel %}-->
-<!--        <div class="carousel-item {% if forloop.counter == 1 %} active {% endif %}">-->
-<!--            <img src="{{i.image.url}}" class="d-block w-100">-->
-<!--        </div>-->
-<!--        {% endfor %}-->
-<!--        {% endif %}-->
-
-<!--    </div>-->
-<!--    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"-->
-<!--            data-bs-slide="prev">-->
-<!--        <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
-<!--        <span class="visually-hidden">Previous</span>-->
-<!--    </button>-->
-<!--    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"-->
-<!--            data-bs-slide="next">-->
-<!--        <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
-<!--        <span class="visually-hidden">Next</span>-->
-<!--    </button>-->
-<!--</div>-->
 {% endblock carousel %}
 
 
@@ -123,11 +94,31 @@
     </div>
 </div>
 
+
+<!--<div class="container mt-3 mb-3">-->
+<!--    <h5 class="text-center"><em><b>वीडियो</b></em></h5>-->
+<!--        <div class="row">-->
+<!--        {% for video in videos %}-->
+<!--        <div class="col-lg-4 col-md-6 col-xs-12">-->
+<!--            <div class="custom-div mb-4">-->
+<!--                <p>{{ video.snippet.title }}</p>-->
+<!--                <p>{{ video.snippet.description }}</p>-->
+<!--                <div class="embed-responsive embed-responsive-4by3">-->
+<!--                    <div class="youtube-player" data-id="{{ video.id.videoId }}"></div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        {% endfor %}-->
+<!--    </div>-->
+<!--</div>-->
+
 <!-- ---------------------------------------------------------- -->
 <p class="text-center">Follow us</p>
 <div class="d-flex col-lg-2 mx-auto mt-2">
     <div class="m-1 mx-auto">
-        <a class="facebook-button m-2" href="https://www.facebook.com/people/Swami-Krishnanand-Mahamandaleshwar/100071491568962/?mibextid=JRoKGi" target="_blank">
+        <a class="facebook-button m-2"
+           href="https://www.facebook.com/people/Swami-Krishnanand-Mahamandaleshwar/100071491568962/?mibextid=JRoKGi"
+           target="_blank">
             <i class="blue-color fa fa-facebook-f facebook" style="font-size:24px"></i><br/><br/>
         </a>
     </div>
@@ -140,7 +131,8 @@
     </div>
 
     <div class="m-1 mx-auto">
-        <a class="facebook-button m-2" href="https://youtube.com/@mahamandaleshwarswamikrish44?si=GcGsThv4S3GzVeM4" target="_blank">
+        <a class="facebook-button m-2" href="https://youtube.com/@mahamandaleshwarswamikrish44?si=GcGsThv4S3GzVeM4"
+           target="_blank">
             <i class="fa fa-youtube-play" style="font-size:24px;color:red"></i></br><br/>
         </a>
     </div>
@@ -155,27 +147,86 @@
 {% endblock content %}
 
 {% block donet %}
-<div class="col-lg-8 text-center mx-auto mb-3" id="donate">
-    <p class="mt-4">सहयोग राशी /Donate Now</p>
-    <h3>SCAN AND PAY</h3>
-    <div class="row mx-auto">
-        <div class="col-lg-4 mt-4 mx-auto">
-<!--            <pre style="font-size:20px">{{dan.details}}</pre>-->
-            Name: RAJEEV KUMAR PANDEY
-            <br>
-            Current A/c No: 685310110001242
-            <br>
-            Bank Name: Bank of India
-            <br>
-            IFC Code : BKID0006853
-            <br>
-            Vrindavan Branch Chhatikara Road
-        </div>
+<p class="mt-4 text-center">सहयोग राशी /Donate Now</p>
+<div class="row">
+    <div class="col-lg-6 text-center mx-auto mb-3" id="donate1">
+        <div class="row mx-auto">
+            <div class="col-lg-4 mt-4 mx-auto">
+                Name: RAJEEV KUMAR PANDEY
+                <br>
+                Current A/c No: 685310110001242
+                <br>
+                Bank Name: Bank of India
+                <br>
+                IFC Code : BKID0006853
+                <br>
+                Vrindavan Branch Chhatikara Road
+            </div>
 
-        <div class="col-lg-4 mx-auto">
-            <img alt="" height="200" src="{{dan.scaner.url}}">
-        </div>
+            <div class="col-lg-4 mx-auto">
+                <img alt="" height="200" src="{{dan.scaner.url}}">
+            </div>
 
+        </div>
+    </div>
+
+    <div class="col-lg-6 text-center mx-auto mb-3" id="donate2">
+        <div class="row mx-auto">
+            <div class="col-lg-4 mt-4 mx-auto">
+                Name: Bharatiya Sanskriti Jagran Trust (Regd.)
+                <br>
+                Current A/c No: 22660210001356
+                <br>
+                Bank Name: UCO Bank
+                <br>
+                IFC Code : UCBA 0002266
+                <br>
+                Vrindavan Branch Chhatikara Road
+            </div>
+
+            <div class="col-lg-4 mx-auto">
+                <img alt="" height="200" src="{{dan1.scaner.url}}">
+            </div>
+
+        </div>
     </div>
 </div>
+
 {% endblock %}
+
+{% block js %}
+<!--<script src="https://www.youtube.com/iframe_api"></script>-->
+<!--<script>-->
+<!--    var players = [];-->
+
+<!--    function onYouTubeIframeAPIReady() {-->
+<!--        $(".youtube-player").each(function () {-->
+<!--            var videoId = $(this).data("id");-->
+<!--            var player = new YT.Player(this, {-->
+<!--                height: '80%',-->
+<!--                width: '100%', // Set width to 100% for responsiveness-->
+<!--                videoId: videoId,-->
+<!--                events: {-->
+<!--                    'onStateChange': onPlayerStateChange-->
+<!--                }-->
+<!--            });-->
+<!--            players.push(player);-->
+<!--        });-->
+<!--    }-->
+
+<!--    function onPlayerStateChange(event) {-->
+<!--        if (event.data === YT.PlayerState.PLAYING) {-->
+<!--            pauseOtherPlayers(event.target);-->
+<!--        }-->
+<!--    }-->
+
+<!--    function pauseOtherPlayers(currentPlayer) {-->
+<!--        for (var i = 0; i < players.length; i++) {-->
+<!--            if (players[i] !== currentPlayer) {-->
+<!--                players[i].pauseVideo();-->
+<!--            }-->
+<!--        }-->
+<!--    }-->
+
+<!--</script>-->
+{% endblock js %}
