@@ -87,6 +87,15 @@
         }
     }
 </style>
+
+<style>
+    .custom-container {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background: linear-gradient(45deg, #ff8c00, #ff0080);
+        color: #fff; /* Set text color to be readable on the gradient background */
+        padding: 20px; /* Add padding for better visibility */
+    }
+</style>
 {% endblock css %}
 
 {% block carousel %}
@@ -113,11 +122,12 @@
 </div>
 
 
-<div class="col-lg-8 col-sm-12 text-center mx-auto p-3">
+<div class="col-lg-8 col-sm-12 text-center mx-auto p-3 custom-container">
     <div class="embed-responsive embed-responsive-16by9">
         {{tv|safe}}
     </div>
 </div>
+
 
 
 <!--<div class="container mt-3 mb-3">-->
