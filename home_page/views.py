@@ -139,15 +139,20 @@ def daan(request):
         carousel = ''
 
     dan = DanDetails.objects.first()
+    dan1 = DanDetails.objects.last()
     if dan:
         dan = dan
     else:
         dan = ''
+    if dan1:
+        dan1 = dan1
+    else:
+        dan1 = ''
     context = {
         'site_info': site_info[0],
         'header_daan_banner': header_daan_banner,
         'carousel': carousel,
-
         'dan': dan,
+        'dan1': dan1,
     }
     return render(request, 'daan.html', context)
