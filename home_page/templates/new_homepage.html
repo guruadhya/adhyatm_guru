@@ -99,20 +99,18 @@
 {% endblock css %}
 
 {% block carousel %}
-<!--<img src="{{header_middle_banner}}" class="d-block w-100">-->
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    {% for carousel in carousel %}
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active" aria-current="true"{% endif %} aria-label="Slide {{ forloop.counter }}"></button>
+    {% endfor %}
   </div>
   <div class="carousel-inner">
-      {% for carousel in carousel %}
-        <div class="carousel-item {% if forloop.counter == 1 %} active {% endif %}">
-          <img src="{{carousel.image.url}}" class="d-block w-100" alt="...">
-        </div>
-      {% endfor %}
-
+    {% for carousel in carousel %}
+      <div class="carousel-item {% if forloop.first %}active{% endif %}">
+        <img src="{{ carousel.image.url }}" class="d-block w-100" alt="...">
+      </div>
+    {% endfor %}
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -252,4 +250,14 @@
 {% endblock %}
 
 {% block js %}
+
+<script>
+  // Set interval for carousel
+  var carouselInterval = 3000; // Interval in milliseconds
+  var carousel = document.getElementById('carouselExampleIndicators');
+  var carouselInstance = new bootstrap.Carousel(carousel, {
+    interval: carouselInterval,
+    wrap: true // Enable auto-looping
+  });
+</script>
 {% endblock js %}
