@@ -10,5 +10,6 @@ urlpatterns = [
     path('about_trust/', views.about_trust, name='about_trust'),
     path('add_gallery_images/', views.add_gallery_images, name='add_gallery_images'),
     path('gallery_images/', views.gallery_images, name='gallery_images'),
+    path('gallery_video/', views.gallery_video, name='gallery_video'),
 
 ]

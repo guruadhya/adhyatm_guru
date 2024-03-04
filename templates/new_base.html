@@ -36,6 +36,7 @@
         .lg-backdrop {
             background: rgba(0, 0, 0, 0.8); /* Customize the lightbox backdrop color */
         }
+
     </style>
     {% block css %}
     {% endblock css %}
@@ -65,8 +66,20 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/prakalp/">प्रकल्प</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/gallery_images/">मीडिया गैलरी</a>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        मीडिया गैलरी
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/gallery_images/">इमेज गैलरी</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/gallery_video/">वीडियो गैलरी</a>
+                        </li>
+                    </ul>
                 </li>
 
                 <li class="nav-item">

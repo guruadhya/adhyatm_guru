@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'site_settings',
     'vichar',
     'carousel',
+    'video_gallery',
 ]
 
 MIDDLEWARE = [

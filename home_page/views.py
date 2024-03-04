@@ -8,6 +8,8 @@ from site_settings.models import SiteSettings, DanDetails
 
 from carousel.models import Carousel, CarouselImages
 
+from video_gallery.models import VideoGallery
+
 
 def home_page(request):
     site_info = SiteSettings.objects.all()
@@ -110,6 +112,20 @@ def gallery_images(request):
         'gallery': gallery
     }
     return render(request, 'gellery_images.html', context)
+
+
+def gallery_video(request):
+    site_info = SiteSettings.objects.all()
+    header_banner_homepage = LookupField.objects.filter(title='header_banner_homepage')
+    if header_banner_homepage:
+        header_banner_homepage = header_banner_homepage[0].image.url
+    video = VideoGallery.objects.all()
+    context = {
+        'site_info': site_info[0],
+        'header_banner_homepage': header_banner_homepage,
+        'video': video
+    }
+    return render(request, 'gellery_video.html', context)
 
 
 def daan(request):
